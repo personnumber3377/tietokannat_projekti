@@ -1,0 +1,108 @@
+entity EMPLOYEE {
+  +employee_id : Integer <<PK>>
+  --
+  first_name : Varchar(50)
+  last_name : Varchar(50)
+  role : Varchar(50)
+  hire_date : Date
+  phone : Varchar(15)
+  email : Varchar(100)
+  hourly_rate : Decimal(8,2)
+  department : Varchar(50)
+}
+
+entity MACHINE {
+  +machine_id : Integer <<PK>>
+  --
+  name : Varchar(100)
+  type : Varchar(50)
+  model : Varchar(50)
+  purchase_date : Date
+  maintenance_due_date : Date
+  status : Varchar(50)
+  hourly_cost : Decimal(8,2)
+}
+
+entity PROJECT {
+  +project_id : Integer <<PK>>
+  --
+  name : Varchar(100)
+  description : Text
+  start_date : Date
+  end_date : Date
+  budget : Decimal(10,2)
+  status : Varchar(50)
+  location : Varchar(100)
+  project_manager_id : Integer <<FK>>
+}
+
+entity MATERIAL {
+  +material_id : Integer <<PK>>
+  --
+  name : Varchar(100)
+  unit : Varchar(20)
+  unit_cost : Decimal(8,2)
+  supplier : Varchar(100)
+  stock_quantity : Integer
+}
+
+entity TASK {
+  +task_id : Integer <<PK>>
+  --
+  project_id : Integer <<FK>>
+  name : Varchar(100)
+  description : Text
+  start_date : Date
+  end_date : Date
+  status : Varchar(50)
+  completion_percentage : Integer
+}
+
+entity ASSIGNMENT {
+  +assignment_id : Integer <<PK>>
+  --
+  project_id : Integer <<FK>>
+  employee_id : Integer <<FK>>
+  assigned_date : Date
+  role_on_project : Varchar(50)
+  hours_worked : Decimal(5,2)
+}
+
+entity MACHINE_USAGE {
+  +usage_id : Integer <<PK>>
+  --
+  project_id : Integer <<FK>>
+  machine_id : Integer <<FK>>
+  start_datetime : Timestamp
+  end_datetime : Timestamp
+  operator_employee_id : Integer <<FK>>
+  hours_used : Decimal(5,2)
+}
+
+entity PROJECT_MATERIAL {
+  +project_material_id : Integer <<PK>>
+  --
+  project_id : Integer <<FK>>
+  material_id : Integer <<FK>>
+  quantity_needed : Integer
+  quantity_used : Integer
+  order_date : Date
+}
+
+' Relationships
+EMPLOYEE ||--o{ ASSIGNMENT
+PROJECT  ||--o{ ASSIGNMENT
+
+PROJECT  ||--o{ TASK
+
+PROJECT  ||--o{ MACHINE_USAGE
+MACHINE  ||--o{ MACHINE_USAGE
+EMPLOYEE ||--o{ MACHINE_USAGE : operates
+
+PROJECT  ||--o{ PROJECT_MATERIAL
+MATERIAL ||--o{ PROJECT_MATERIAL
+
+PROJECT ||--|| EMPLOYEE : manager
+
+@enduml
+
