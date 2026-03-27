@@ -48,8 +48,16 @@ riippuvuuksista, anomalioista sekä tarvittaessa relaatioiden osittaminen Boyce-
 - Työkone on vain osaprojekteihin osan aikaa mukana (mahdollisesti)
 osaprojekteihin pitää lisätä mitä pätevyyksiä sinne tarvitaan
 
--työntekijä historia redundant (eli kolme asiaa per työntekijä) mitkä kolme.
+- työntekijä historia redundant (eli kolme asiaa per työntekijä) mitkä kolme.
 
+- osaprojekteiden rakenne:
+
+- yksi pätevyys koko osaprojektin ajan varattu, mutta kyseinen henkilö saattaa vaihtua...
+
+- lisäät yhden alkion tohon arrayhin? projekteissa työntekijöiden varaus
+- samaa pätevyyttä useampi osaprojektissa.
+- työntekijä jolla on se pätevyys voi vaihtua, mutta pätevyys täytyy säilyä koko osaprojektin ajan.
+- 
 
 
 
