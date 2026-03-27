@@ -1,3 +1,5 @@
+@startuml
+
 entity EMPLOYEE {
   +employee_id : Integer <<PK>>
   --

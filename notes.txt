@@ -59,5 +59,23 @@ osaprojekteihin pitää lisätä mitä pätevyyksiä sinne tarvitaan
 - työntekijä jolla on se pätevyys voi vaihtua, mutta pätevyys täytyy säilyä koko osaprojektin ajan.
 - 
 
+onko helpompi osaprojektista toi joku juttu???
+projektissa ei ole erikseen työntekijöitä mitä se vaatii???
+
+historiaa täytyy selata eli täytyy tietää osaprojektien työntekijät jälkikäteen...
+
+- projektissa on osaprojektit (array ehkä???)
+
+Millaisia relaatiot on?
+
+osaprojektit arrayna? relaatiot
+
+tarvitaanko rajoitteita lainkaan??? 
+osaprojekteja useampi samanaikaisesti
+rajoitteet on vain yksi integer int (tehtävässä tarkennettu).
+
+
+
+
 
 
