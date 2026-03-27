@@ -75,6 +75,8 @@ osaprojekteja useampi samanaikaisesti
 rajoitteet on vain yksi integer int (tehtävässä tarkennettu).
 
 
+konehistoriaa ei tarvii eikä työntekijähistoriaa koska voi katsoa ja hakea valmistuneista...
+
 
 
 
