@@ -1,0 +1,52 @@
+
+https://miro.com/app/board/uXjVG45_530=/
+
+email: elias.myllymaki04p@gmail.com
+password: Password1!      (tai taisi olla myös Password!1)
+
+
+
+
+
+
+- Käytetään henkilöiden varaukseen alku- ja loppupäivämääriä.
+- SQLITE ei tue suoraan date objecteja mutta voi store real tai integer...
+- Varaus 3xN matriisi (project id (tai tyhjä), minä aikana, ) eli (proj_id?, alku_pvm, loppu_pvm)
+- Työosaaminen (eli pätevyydet) ovat relaatioita. Rooli itsessään objekti.
+- Työntekijällä on lista pätevyyksiä (voivat olla koneisiin relaatioita, mutta jos pätevyys ei ole koneelle, niin tyhjä???)
+- Materiaali- ja projektimateriaali vaativat 
+- Oletetaan ettei rakennusfirmalla ole materiaalia varastossa. (lähes kaikki tilataan paikanpäälle)
+- EI tarvita rakennusmateriaalien tai henkilöstön kustannusjärjestelmää.
+
+
+KRITEERIT:
+
+
+Raportin tulee olla PDF-muodossa. Raportin voi kirjoittaa suomeksi, ruotsiksi tai englanniksi. Raportin
+rakenteen on oltava seuraava:
+- Kansilehti, joka sisältää opiskelijoiden nimet ja sähköpostiosoitteet.
+- UML-kaavio.
+- UML-kaaviota vastaava relaatiokaavio.
+- Selostus ratkaisusta (suositeltu pituus 3-4 sivua ilman seuraavassa kohdassa mainittuja
+vastauksia). Tässä kohdassa voit esimerkiksi perustella tekemiäsi ratkaisuja ja antaa
+esimerkkejä siitä, miten järjestelmässä pystytään toteuttamaan kohdassa 3 esitettyjä toimintoja.
+- Perustellut vastaukset kohdassa 2 annettuihin kysymyksiin normaalimuodosta, funktionaalisista
+riippuvuuksista, anomalioista sekä tarvittaessa relaatioiden osittaminen Boyce-Coddnormaalimuotoon.
+
+
+
+
+- It doesn't have "qualifications" for the personell. Can you upgrade it such that it has 
+- Mass for the equipment.
+- Fuel consumption for each vehicle or equipment.
+
+
+
+- Pitää lisätä mahdollisuus, että työntekijä on vain osan aikaa projektissa.
+- Pitää lisätä mahdollisuus, että työntekijä on vain osan aikaa projektissa eli työntekijälle voi tulla sijainen = assignment päättyy toiselle työntekijälle ja assignment laitetaan toiselle työntekijälle.
+
+- Työkone on vain osaprojekteihin osan aikaa mukana (mahdollisesti)
+osaprojekteihin pitää lisätä mitä pätevyyksiä sinne tarvitaan
+
+
+
