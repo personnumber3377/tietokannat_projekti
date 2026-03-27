@@ -48,5 +48,8 @@ riippuvuuksista, anomalioista sekä tarvittaessa relaatioiden osittaminen Boyce-
 - Työkone on vain osaprojekteihin osan aikaa mukana (mahdollisesti)
 osaprojekteihin pitää lisätä mitä pätevyyksiä sinne tarvitaan
 
+-työntekijä historia redundant (eli kolme asiaa per työntekijä) mitkä kolme.
+
+
 
 
