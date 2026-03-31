@@ -1,0 +1,102 @@
+# Projektit kuvailee siis rakennusfirman eri projekteja
+Projektit(
+    Projekti_id (PK),
+    Valmis,
+    Alkupvm,
+    Loppupvm,
+    Paikka
+)
+
+# Osaprojektit ovat yksittäisen projektin osia
+# Projekti_id viittaa "Projektit"-taulukkoon
+Osaprojektit(
+    Osaprojekti_id (PK),
+    Projekti_id,  # viittaa Projektit(Projekti_id)
+    Valmis,
+    Alkupvm,
+    Loppupvm
+)
+
+# Kuvaa osaprojektien välisiä riippuvuuksia
+OsaprojektiRiippuvuus(
+    Edeltava_id (PK),  # viittaa Osaprojektit
+    Seuraava_id (PK)   # viittaa Osaprojektit
+)
+
+# Työntekijät
+Tyontekijat(
+    Tyontekija_id (PK)
+)
+
+# Työntekijöiden pätevyydet tämä siis on vissiin erillinen rooliin verrattuna
+Patevyydet(
+    Patevyys_id (PK)
+)
+
+# Täytyy olla ns. "monesta moneen"-suhde (ehkä???) työntekijän ja pätevyyden välillä
+TyontekijaPatevyys(
+    Tyontekija_id (PK),  # viittaa Tyontekijat
+    Patevyys_id (PK)     # viittaa Patevyydet
+)
+
+# Työkoneiden mallit ja yleistä tietoa niistä
+Konemalli(
+    Malli (PK),
+    Valmistaja,
+    Massa,
+    Polttoaineen_kulutus,
+    Kuvaus
+)
+
+# Yksittäiset työkoneet (EI siis malli vaan yksittäiset "koneyksilöt")
+# Malli viittaa "Konemalli"-taulukkoon
+Koneet(
+    Kone_id (PK),
+    Malli  # viittaa Konemalli(Malli)
+)
+
+# Yleinen tarve (tämä on siis yläluokka kaikenlaisille tarpeille)
+Tarpeet(
+    Tarve_id (PK)
+    Count
+)
+
+# Liittää tarpeet osaprojekteihin
+OsaprojektiTarve(
+    Osaprojekti_id (PK),  # viittaa Osaprojektit
+    Tarve_id (PK)         # viittaa Tarpeet
+)
+
+# Työkoneen tarve tietyllä aikavälillä
+Konetarpeet(
+    Tarve_id (PK),  # viittaa Tarpeet
+    Malli,          # viittaa Konemalli
+    Alkupvm,
+    Loppupvm
+)
+
+# Työntekijän pätevyyteen perustuva tarve
+Tyontekijatarve(
+    Tarve_id (PK),   # viittaa Tarpeet
+    Patevyys_id      # viittaa Patevyydet
+)
+
+# Varaus siis kuvaa resurssin käyttöä osaprojektissa jollakin aikavälillä
+Varaus(
+    Varaus_id (PK),
+    Osaprojekti_id,  # viittaa Osaprojektit
+    Alkupvm,
+    Loppupvm
+)
+
+# Yksittäisen koneen varaus
+Konevaraus(
+    Varaus_id (PK),  # viittaa Varaus
+    Kone_id          # viittaa Koneet
+)
+
+# Työntekijän varaus osaprojektiin
+TyontekijaVaraus(
+    Varaus_id (PK),   # viittaa Varaus
+    Tyontekija_id     # viittaa Tyontekijat
+)
