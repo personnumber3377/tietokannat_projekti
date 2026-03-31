@@ -1,3 +1,6 @@
+#Alleviivauksien sijaan, Primary Key:t ovat merkitty "(PK)" merkinnöllä
+
+
 # Projektit kuvailee siis rakennusfirman eri projekteja
 Projektit(
     Projekti_id (PK),
