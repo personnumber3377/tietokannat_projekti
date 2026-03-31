@@ -1,0 +1,3 @@
+
+- Kun osaprojektit liittyy projekteihin, niin ei tarvitse erillistä "liittyy"-oliota.
+
