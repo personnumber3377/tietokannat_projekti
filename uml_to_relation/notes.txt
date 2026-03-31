@@ -5,3 +5,7 @@
 
 " Vaihtoehtoinen tapa käsitellä monesta-yhteen-assosiaatioita"...
 
+
+https://plus.cs.aalto.fi/tietokannat/2026-spring/materials_kierros_3/kierros_3_kierros3materiaali2/#vaihtoehtoinen-tapa-kasitella-monesta-yhteen-assosiaatioita
+
+
