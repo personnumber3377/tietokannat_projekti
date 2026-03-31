@@ -1,3 +1,7 @@
 
 - Kun osaprojektit liittyy projekteihin, niin ei tarvitse erillistä "liittyy"-oliota.
 
+- Same osaprojekteihin, että mihin isoon projektiin se kuuluu...
+
+" Vaihtoehtoinen tapa käsitellä monesta-yhteen-assosiaatioita"...
+
