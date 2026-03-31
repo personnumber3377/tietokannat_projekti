@@ -57,8 +57,7 @@ Koneet(
 
 # Yleinen tarve (tämä on siis yläluokka kaikenlaisille tarpeille)
 Tarpeet(
-    Tarve_id (PK),
-    Maara
+    Tarve_id (PK)
 )
 
 # Liittää tarpeet osaprojekteihin
