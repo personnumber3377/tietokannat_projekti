@@ -1,0 +1,190 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[left=25mm,right=25mm]{geometry}
+
+
+\begin{document}
+
+
+%T�st� alkaa selkkarin kansilehti. Vaihda tilalle tarvittavat tiedot.
+\begin{titlepage}
+\pagestyle{empty}
+\begin{center}
+
+\vspace*{3cm}
+\noindent\LARGE{\textbf{
+Tietokannat Ryhmätyö
+}}
+
+%*******************************************************
+\vspace{0.5cm}
+\large{
+\begin{tabular}{l l}
+Hugo Palin & Hugo.Palin@aalto.fi\\
+Elias Myllymäki & Elias.Myllymaki@aalto.fi\\
+Antti Alitalo & Antti.Alitalo@aalto.fi\\
+\\
+\\
+\end{tabular}
+}
+\end{center}
+\end{titlepage}
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{UML-kaavio.png}
+    \caption{Caption}
+    \label{fig:UML-kaavio}
+\end{figure}
+
+
+\begin{verbatim}
+# Projektit kuvailee siis rakennusfirman eri projekteja
+Projektit(
+    Projekti_id (PK),
+    Valmis,
+    Alkupvm,
+    Loppupvm,
+    Paikka
+)
+
+# Osaprojektit ovat yksittäisen projektin osia
+# Projekti_id viittaa "Projektit"-taulukkoon
+Osaprojektit(
+    Osaprojekti_id (PK),
+    Projekti_id,  # viittaa Projektit(Projekti_id)
+    Valmis,
+    Alkupvm,
+    Loppupvm
+)
+
+# Kuvaa osaprojektien välisiä riippuvuuksia
+OsaprojektiRiippuvuus(
+    Edeltava_id (PK),  # viittaa Osaprojektit
+    Seuraava_id (PK)   # viittaa Osaprojektit
+)
+
+# Työntekijät
+Tyontekijat(
+    Tyontekija_id (PK)
+)
+
+# Työntekijöiden pätevyydet tämä siis on vissiin erillinen rooliin verrattuna
+Patevyydet(
+    Patevyys_id (PK)
+)
+
+# Täytyy olla ns. "monesta moneen"-suhde (ehkä???) työntekijän ja pätevyyden välillä
+TyontekijaPatevyys(
+    Tyontekija_id (PK),  # viittaa Tyontekijat
+    Patevyys_id (PK)     # viittaa Patevyydet
+)
+
+# Työkoneiden mallit ja yleistä tietoa niistä
+Konemalli(
+    Malli (PK),
+    Valmistaja,
+    Massa,
+    Polttoaineen_kulutus,
+    Kuvaus
+)
+
+# Yksittäiset työkoneet (EI siis malli vaan yksittäiset "koneyksilöt")
+# Malli viittaa "Konemalli"-taulukkoon
+Koneet(
+    Kone_id (PK),
+    Malli  # viittaa Konemalli(Malli)
+)
+
+# Yleinen tarve (tämä on siis yläluokka kaikenlaisille tarpeille)
+Tarpeet(
+    Tarve_id (PK)
+)
+
+# Liittää tarpeet osaprojekteihin
+OsaprojektiTarve(
+    Osaprojekti_id (PK),  # viittaa Osaprojektit
+    Tarve_id (PK)         # viittaa Tarpeet
+)
+
+# Työkoneen tarve tietyllä aikavälillä
+Konetarpeet(
+    Tarve_id (PK),  # viittaa Tarpeet
+    Malli,          # viittaa Konemalli
+    Alkupvm,
+    Loppupvm
+)
+
+# Työntekijän pätevyyteen perustuva tarve
+Tyontekijatarve(
+    Tarve_id (PK),   # viittaa Tarpeet
+    Patevyys_id      # viittaa Patevyydet
+)
+
+# Varaus siis kuvaa resurssin käyttöä osaprojektissa jollakin aikavälillä
+Varaus(
+    Varaus_id (PK),
+    Osaprojekti_id,  # viittaa Osaprojektit
+    Alkupvm,
+    Loppupvm
+)
+
+# Yksittäisen koneen varaus
+Konevaraus(
+    Varaus_id (PK),  # viittaa Varaus
+    Kone_id          # viittaa Koneet
+)
+
+# Työntekijän varaus osaprojektiin
+TyontekijaVaraus(
+    Varaus_id (PK),   # viittaa Varaus
+    Tyontekija_id     # viittaa Tyontekijat
+)
+\end{verbatim}
+
+
+\newpage
+
+% Tähän yappaamista ja selityksiä
+
+% Anomaliat
+
+Tietokannassa ei ole toisteisuutta, koska tietokanta on suunniteltu siten ettei ole, 
+
+% Jos tarvit kolme tyyppiä, niin kolme riviä lisää ??? Tarpeissa anomaly...
+
+% Kolme riviä tarpeita, ja sitten sä etit tuolta varausoliosta että kuinka monta ihmistä joka pystyy täyttämään ne tarpeen on samaan aikaan, mutta ainoo tapa miten määrittää se on käyttämällä sellasta count funktioo muutenkin...
+% Sulla on se count juttu ja voit tehä theta joinin ja varmistaa että ihmisten määrä sama kun tarpeitten määrä.
+
+% Nyt on siis kolme riviä tietoo jokka on redundancy... (ehkä???)
+
+% Runtimellä ei väliä tässä kurssissa???????? (sus, eli count juttu toimis sillon, vaikka joudutaan laskee joka kerta.).
+
+
+Tietokannassa funktionaalisia riippuvuuksia ovat 
+\\
+Projekti-oliossa
+\begin{equation*}
+    
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
