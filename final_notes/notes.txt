@@ -3,3 +3,9 @@ Tarpeet ja osaprojektit yhteen tauluun ja sitten varaukset ja työntekijät yhte
 
 
 
+
+Counttia ei edes kuuluisi olla tarpeet jutussa, koska joku projekti voi tarvita viis kirvesmiestä ja joku toinen kaksikymmentä...
+
+
+
+
