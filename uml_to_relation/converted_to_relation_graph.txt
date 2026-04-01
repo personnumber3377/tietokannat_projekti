@@ -102,3 +102,9 @@ TyontekijaVaraus(
     Varaus_id (PK),   # viittaa Varaus
     Tyontekija_id     # viittaa Tyontekijat
 )
+
+# UML-kuvaajassa "Varaustarpeet"
+VarausTarve(
+    Varaus_id (PK),   # viittaa Varaus
+    Tarve_id (PK)     # viittaa Tarpeet
+)
